@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.9"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9
+                  http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">
+ 
+    <!--
+    	See http://wiki.openmrs.org/display/docs/Module+liquibase+File for 
+    	documentation on this file.
+    
+        See http://www.liquibase.org/manual/home#available_database_refactorings
+        for a list of supported elements and attributes
+    -->
+ 
+ 	<!-- Uncomment the changeset below if you want to make the Item class persistable, see also Item and CtechdevDaoTest -->
+ 	<!--
+	<changeSet id="ctechdev-2016-08-02-12-21" author="raff">
+		<preConditions onFail="MARK_RAN">
+			<not><tableExists tableName="ctechdev_item"/></not>
+		</preConditions>
+		<comment>
+			Creating the ctechdev_item table
+		</comment>
+		<createTable tableName="ctechdev_item">
+			<column name="ctechdev_item_id" type="int" autoIncrement="true">
+				<constraints primaryKey="true" nullable="false"/>
+			</column>
+			<column name="uuid" type="char(38)">
+				<constraints nullable="false" unique="true"></constraints>
+			</column>
+			<column name="owner" type="int" />
+			<column name="description" type="varchar(255)" />
+		</createTable>
+        <addForeignKeyConstraint constraintName="ctechdev_item_owner_fk" baseTableName="ctechdev_item" baseColumnNames="owner"  referencedTableName="users"
+                                 referencedColumnNames="user_id" />
+    </changeSet> -->
+
+    <changeSet id="ctechdev-2020-1" author="nidhro">
+        <preConditions onFail="MARK_RAN">
+            <not><tableExists tableName="ctech_devs"/></not>
+        </preConditions>
+        <comment>
+            Creating the ctech_devs table
+        </comment>
+        <createTable tableName="ctech_devs">
+            <column name="ctech_dev_id" type="int" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="job_id" type="varchar(38)"/>
+            <column name="name" type="varchar(255)"/>
+            <column name="gender" type="varchar(10)"/>
+            <column name="designation" type="varchar(255)"/>
+        </createTable>
+    </changeSet>
+ 
+</databaseChangeLog>

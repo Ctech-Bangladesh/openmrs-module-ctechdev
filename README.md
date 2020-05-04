@@ -1,13 +1,13 @@
-${moduleName}
+Ctech Module for Developers
 ==========================
 
 Description
 -----------
-This is a very basic module which can be used as a starting point in creating a new module.
+This is a very basic module which can be used for creating developers of Crystal Technology Bangladesh Limited
 
 Building from Source
 --------------------
-You will need to have Java 1.6+ and Maven 2.x+ installed.  Use the command 'mvn package' to 
+You will need to have Java 1.8 and Maven 2.x+ installed.  Use the command 'mvn package' to 
 compile and package the module.  The .omod file will be in the omod/target folder.
 
 Alternatively you can add the snippet provided in the [Creating Modules](https://wiki.openmrs.org/x/cAEr) page to your 
